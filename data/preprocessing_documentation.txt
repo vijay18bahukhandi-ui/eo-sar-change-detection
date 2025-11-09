@@ -1,0 +1,65 @@
+
+PRE-PROCESSING AND COREGISTRATION DOCUMENTATION
+================================================
+
+OPTICAL DATA PROCESSING (Sentinel-2):
+-------------------------------------
+1. Atmospheric Correction:
+   - Method: Dark Object Subtraction (simplified)
+   - Purpose: Remove atmospheric haze and correct illumination
+   - Real-world: Use Sen2Cor for proper atmospheric correction
+
+2. Radiometric Correction:
+   - Conversion to surface reflectance
+   - Cloud masking (simulated in this implementation)
+
+3. Image Enhancement:
+   - Histogram equalization for contrast improvement
+   - Band stacking for RGB visualization
+
+SAR DATA PROCESSING (Sentinel-1):
+--------------------------------
+1. Radiometric Calibration:
+   - Conversion to dB scale: 10 * log10(DN)
+   - Purpose: Convert digital numbers to radar backscatter
+
+2. Speckle Filtering:
+   - Method: Median Filter (3x3 window)
+   - Purpose: Reduce salt-and-pepper noise in SAR imagery
+   - Real-world: Use Lee, Gamma, or Refined Lee filters
+
+3. Terrain Correction:
+   - Simulated in coregistration step
+   - Purpose: Correct geometric distortions from topography
+
+COREGISTRATION:
+--------------
+1. Method: Image-to-image registration using rasterio reproject
+2. Reference: Sentinel-2 2019 imagery
+3. Resampling: Bilinear interpolation
+4. Output: All images in same projection and pixel grid
+
+COORDINATE SYSTEM:
+-----------------
+- Source: Native satellite projection (UTM)
+- Target: WGS84 (EPSG:4326) for consistency
+- Resolution: Maintained at native resolution (10m for S2, 10m for S1)
+
+QUALITY CHECKS:
+--------------
+- Visual inspection of coregistration accuracy
+- Histogram analysis for radiometric consistency
+- Edge preservation in filtered images
+
+LIMITATIONS:
+-----------
+- Simplified atmospheric correction for demonstration
+- Basic speckle filtering (median instead of advanced filters)
+- Coregistration assumes similar extents
+
+NEXT STEPS:
+----------
+- Implement advanced atmospheric correction (6S, Sen2Cor)
+- Add proper terrain correction for SAR
+- Include cloud masking for optical data
+- Validate coregistration accuracy with ground control points

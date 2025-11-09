@@ -1,0 +1,78 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "a522d0a5-3a41-424d-aec6-07b69285b89e",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Create requirements.txt\n",
+    "requirements = \"\"\"# EO-SAR Change Detection Dependencies\n",
+    "# Core scientific computing\n",
+    "numpy>=1.21.0\n",
+    "pandas>=1.3.0\n",
+    "scipy>=1.7.0\n",
+    "\n",
+    "# Visualization\n",
+    "matplotlib>=3.5.0\n",
+    "seaborn>=0.11.0\n",
+    "plotly>=5.0.0\n",
+    "\n",
+    "# Geospatial processing\n",
+    "rasterio>=1.2.0\n",
+    "geopandas>=0.10.0\n",
+    "shapely>=1.8.0\n",
+    "fiona>=1.8.0\n",
+    "pyproj>=3.0.0\n",
+    "\n",
+    "# Image processing\n",
+    "scikit-image>=0.19.0\n",
+    "opencv-python>=4.5.0\n",
+    "Pillow>=8.3.0\n",
+    "\n",
+    "# Remote sensing specific\n",
+    "sentinelsat>=1.0.0\n",
+    "earthengine-api>=0.1.300\n",
+    "asf_search>=0.4.0\n",
+    "\n",
+    "# Jupyter and utilities\n",
+    "jupyter>=1.0.0\n",
+    "ipywidgets>=7.6.0\n",
+    "tqdm>=4.62.0\n",
+    "\n",
+    "# Machine learning (optional)\n",
+    "scikit-learn>=1.0.0\n",
+    "torch>=1.9.0\n",
+    "torchvision>=0.10.0\n",
+    "\"\"\"\n",
+    "\n",
+    "with open('requirements.txt', 'w') as f:\n",
+    "    f.write(requirements)\n",
+    "\n",
+    "print(\"✅ requirements.txt created\")"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.12.7"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}

@@ -1,0 +1,68 @@
+
+DATA ACQUISITION - FIXED MULTI-SOURCE APPROACH
+===============================================
+
+ACQUISITION STRATEGY:
+--------------------
+• Primary Source for SAR: Alaska Satellite Facility (ASF)
+• Fallback: Structured demo data for workflow continuity
+• Status: DEMO DATA (Connection Issues)
+
+FIXED ASF SEARCH PARAMETERS:
+---------------------------
+• API Endpoint: https://api.daac.asf.alaska.edu/services/search/param
+• Platform: Sentinel-1
+• Product Type: GRD_HD (Ground Range Detected High Resolution)
+• Processing Level: L1
+• Polarization: VV, VH (Dual polarization)
+• Beam Mode: IW (Interferometric Wide)
+• Date Format: YYYY-MM-DD
+• ROI: Polygon intersection
+• REMOVED: 'output' parameter (was causing API error)
+
+SENTINEL-2 DEMO DATA STRUCTURE:
+------------------------------
+• Format: .SAFE (Standard Archive Format for Europe)
+• Level: L2A (Atmospherically Corrected)
+• Bands: All standard Sentinel-2 bands (10m, 20m, 60m)
+• Structure: Complete directory hierarchy
+• Purpose: Enable workflow testing and development
+
+ERRORS FIXED:
+------------
+1. ASF API: Removed invalid 'output' parameter from search()
+2. Directory Creation: Fixed missing subdirectory creation
+3. File Paths: Ensured all parent directories exist before file creation
+4. Error Handling: Added graceful fallbacks for all operations
+
+SEARCH RESULTS:
+--------------
+Sentinel-1 (ASF):
+• 2019: 0 products found
+• 2023: 0 products found
+
+Sentinel-2 (Demo Structures):
+• 2019: SUCCESS
+• 2023: SUCCESS
+
+DOWNLOAD STATUS:
+---------------
+• Sentinel-1 2019: DEMO
+• Sentinel-1 2023: DEMO
+• Sentinel-2 2019: DEMO (Enhanced Structure)
+• Sentinel-2 2023: DEMO (Enhanced Structure)
+
+NEXT STEPS FOR REAL DATA:
+-----------------------
+1. Check network connectivity to ASF
+2. Verify ROI coordinates are correct
+3. Try different date ranges if no products found
+4. Consider using alternative data sources
+
+DEMO DATA USAGE:
+---------------
+The created demo structures:
+• Mimic real satellite data organization
+• Allow testing of processing pipelines
+• Maintain the same file structure as real data
+• Enable development without external dependencies

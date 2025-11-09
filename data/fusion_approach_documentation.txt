@@ -1,0 +1,66 @@
+
+DATA FUSION APPROACH DOCUMENTATION
+===================================
+
+PURPOSE:
+--------
+Integrate complementary information from optical (Sentinel-2) and SAR (Sentinel-1)
+data to enhance change detection capabilities and reduce limitations of single-sensor analysis.
+
+FUSION METHODS IMPLEMENTED:
+--------------------------
+
+1. PCA (Principal Component Analysis) Fusion:
+   - Technique: Statistical transformation to orthogonal components
+   - Process: 
+     * Stack optical and SAR data
+     * Compute principal components
+     * Use first principal component representing maximum variance
+   - Advantages: Preserves maximum information from both sensors
+   - Limitations: May not preserve spatial details perfectly
+
+2. Brovey Transform Fusion:
+   - Technique: Spectral preservation with SAR texture injection
+   - Formula: Fused = (Optical × SAR) / (Optical + SAR)
+   - Advantages: Simple, computationally efficient, preserves spectral information
+   - Limitations: May introduce color distortion
+
+3. Wavelet-Based Fusion:
+   - Technique: Multi-resolution analysis using frequency domains
+   - Process:
+     * Decompose images using Gaussian pyramid
+     * Combine low-frequency (average) and high-frequency (maximum) components
+     * Reconstruct fused image
+   - Advantages: Preserves both spectral and spatial information
+   - Limitations: More computationally intensive
+
+JUSTIFICATION FOR FUSION:
+------------------------
+• Optical Data Strengths: Rich spectral information, intuitive interpretation
+• SAR Data Strengths: All-weather capability, surface texture, penetration
+• Combined Benefits: 
+  - Better change detection in cloudy conditions
+  - Enhanced feature discrimination
+  - Reduced false positives/negatives
+  - Complementary information for urban and vegetation monitoring
+
+APPLICATION TO CHANGE DETECTION:
+-------------------------------
+Fused data provides:
+1. Robust urban change detection (buildings appear in both optical and SAR)
+2. Improved vegetation monitoring (optical NDVI + SAR texture)
+3. All-weather capability (SAR fills optical gaps during clouds)
+4. Enhanced feature discrimination (combined spectral and structural info)
+
+RECOMMENDATIONS:
+---------------
+• Use PCA fusion for maximum information preservation
+• Use Brovey for computational efficiency
+• Use Wavelet for high-quality spatial-spectral fusion
+• Validate fusion quality with ground truth when available
+
+LIMITATIONS:
+-----------
+• Requires coregistered input data
+• Fusion artifacts possible in heterogeneous areas
+• Computational overhead for large datasets

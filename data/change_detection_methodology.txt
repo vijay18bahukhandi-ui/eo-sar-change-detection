@@ -1,0 +1,70 @@
+
+CHANGE DETECTION METHODOLOGY DOCUMENTATION
+===========================================
+
+METHODS IMPLEMENTED:
+-------------------
+
+1. Optical-Only Change Detection:
+   - Image Differencing: |Image1 - Image2| > threshold
+   - PCA Change Detection: Second principal component highlights changes
+   - Index-based: NDVI for vegetation, NDBI for urban areas
+
+2. SAR-Only Change Detection:
+   - Ratio Method: log(Image1 / Image2), threshold on absolute value
+   - Advantages: All-weather capability, sensitive to structural changes
+
+3. Cross-Sensor Change Detection:
+   - Weighted Fusion: 60% optical + 40% SAR confidence
+   - Benefits: Combines spectral (optical) and structural (SAR) sensitivity
+
+PARAMETERS AND THRESHOLDS:
+-------------------------
+• Optical Differencing: threshold = 0.2 (20% reflectance change)
+• SAR Ratio: threshold = 0.5 (log ratio magnitude)
+• NDVI Change: threshold = 0.2 (vegetation index change)
+• NDBI Change: threshold = 0.1 (built-up index change)
+• Cross-Sensor: optical_weight = 0.6, sar_weight = 0.4
+
+POST-PROCESSING:
+---------------
+• Morphological Cleaning: Remove small noise pixels
+• Opening/Closing: 3x3 structuring element
+• Minimum Object Size: 10 pixels
+
+COMPARATIVE ANALYSIS RESULTS:
+---------------------------
+Based on the sample data analysis:
+
+• Optical-Only: 4.00 km² changed (4.0%)
+  - Pros: Good for spectral changes, intuitive interpretation
+  - Cons: Affected by clouds, atmospheric conditions
+
+• SAR-Only: 10.11 km² changed (10.1%)
+  - Pros: All-weather, sensitive to moisture and structure
+  - Cons: Speckle noise, less intuitive
+
+• Cross-Sensor: 4.00 km² changed (4.0%)
+  - Pros: Combines strengths of both sensors
+  - Cons: More complex, requires coregistration
+
+VALIDATION APPROACH:
+------------------
+• Visual inspection of change maps
+• Consistency check across methods
+• Statistical analysis of change magnitudes
+• Comparison with known ground changes (when available)
+
+RECOMMENDATIONS:
+---------------
+• Use cross-sensor approach for robust change detection
+• Validate with multiple methods for confidence
+• Consider seasonal variations in threshold selection
+• Implement machine learning for adaptive thresholding
+
+LIMITATIONS:
+-----------
+• Simplified threshold-based approach
+• Sample data used for demonstration
+• No atmospheric correction for optical data
+• Basic speckle filtering for SAR data

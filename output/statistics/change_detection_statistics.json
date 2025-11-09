@@ -1,0 +1,42 @@
+[
+  {
+    "area_name": "Dehradun",
+    "change_type": "optical_differencing",
+    "total_pixels": 10000,
+    "changed_pixels": 400,
+    "change_percentage": 4.0,
+    "changed_area_km2": 4.0
+  },
+  {
+    "area_name": "Dehradun",
+    "change_type": "sar_ratio",
+    "total_pixels": 10000,
+    "changed_pixels": 1011,
+    "change_percentage": 10.11,
+    "changed_area_km2": 10.11
+  },
+  {
+    "area_name": "Dehradun",
+    "change_type": "cross_sensor",
+    "total_pixels": 10000,
+    "changed_pixels": 400,
+    "change_percentage": 4.0,
+    "changed_area_km2": 4.0
+  },
+  {
+    "area_name": "Dehradun",
+    "change_type": "urban_growth",
+    "total_pixels": 10000,
+    "changed_pixels": 400,
+    "change_percentage": 4.0,
+    "changed_area_km2": 4.0
+  },
+  {
+    "area_name": "Dehradun",
+    "change_type": "vegetation_loss",
+    "total_pixels": 10000,
+    "changed_pixels": 175,
+    "change_percentage": 1.7500000000000002,
+    "changed_area_km2": 1.75
+  }
+]
