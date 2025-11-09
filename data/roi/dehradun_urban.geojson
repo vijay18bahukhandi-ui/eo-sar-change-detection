@@ -1,0 +1,42 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Dehradun Urban Area",
+        "location": "Dehradun, Uttarakhand",
+        "purpose": "Urban expansion monitoring 2019-2023",
+        "area_sqkm": 44.0,
+        "use_case": "Urban Feature Change Monitoring"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.95,
+              30.25
+            ],
+            [
+              78.15,
+              30.25
+            ],
+            [
+              78.15,
+              30.4
+            ],
+            [
+              77.95,
+              30.4
+            ],
+            [
+              77.95,
+              30.25
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}

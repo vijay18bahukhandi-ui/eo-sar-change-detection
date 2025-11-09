@@ -1,0 +1,42 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Dehradun Forest Area",
+        "location": "Shivalik Hills, Dehradun",
+        "purpose": "Vegetation and land-cover change monitoring",
+        "area_sqkm": 60.0,
+        "use_case": "Vegetation and Land-Cover Change"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.0,
+              30.4
+            ],
+            [
+              78.3,
+              30.4
+            ],
+            [
+              78.3,
+              30.6
+            ],
+            [
+              78.0,
+              30.6
+            ],
+            [
+              78.0,
+              30.4
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}
